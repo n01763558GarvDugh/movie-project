@@ -2,12 +2,12 @@
   <h1>Create Account</h1>
   <p class="muted">Register to add and manage your own movies.</p>
 
-  <%- include('../partials/errors', { errors }) %>
+  <%- include('../errors', { errors }) %>
 
   <form action="/register" method="POST" class="form-grid">
     <label>
       Name
-      <input type="text" name="name" value="<%= old.name || '' %>" placeholder="Enter your full name" />
+      <input type="text" name="name" value="<%= old.name || '' %>" placeholder="Enter your name" />
     </label>
 
     <label>
@@ -17,12 +17,7 @@
 
     <label>
       Password
-      <input type="password" name="password" placeholder="At least 6 characters" />
-    </label>
-
-    <label>
-      Confirm Password
-      <input type="password" name="confirmPassword" placeholder="Re-enter your password" />
+      <input type="password" name="password" placeholder="Create a password" />
     </label>
 
     <button type="submit" class="btn btn-primary">Register</button>
