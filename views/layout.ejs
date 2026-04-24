@@ -4,17 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><%= title %> | MovieVault</title>
-  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
   <header class="navbar">
     <div class="container nav-flex">
       <a href="/" class="brand">🎬 MovieVault</a>
+
       <nav>
         <a href="/movies">Movies</a>
+
         <% if (currentUser) { %>
           <a href="/movies/new">Add Movie</a>
           <span class="welcome">Hi, <%= currentUser.name %></span>
+
           <form action="/logout" method="POST" class="inline-form">
             <button class="btn btn-outline" type="submit">Logout</button>
           </form>
