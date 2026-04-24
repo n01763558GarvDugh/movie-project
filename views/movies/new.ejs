@@ -1,0 +1,40 @@
+<section class="form-card">
+  <h1>Add Movie</h1>
+  <p class="muted">Add a movie to your collection.</p>
+
+  <%- include('../errors', { errors }) %>
+
+  <form action="/movies" method="POST" class="form-grid">
+    <label>
+      Movie Name
+      <input type="text" name="name" value="<%= old.name || '' %>" placeholder="Movie name" />
+    </label>
+
+    <label>
+      Description
+      <textarea name="description" placeholder="Movie description"><%= old.description || '' %></textarea>
+    </label>
+
+    <label>
+      Year
+      <input type="number" name="year" value="<%= old.year || '' %>" placeholder="2024" />
+    </label>
+
+    <label>
+      Genres
+      <input type="text" name="genres" value="<%= old.genres || '' %>" placeholder="Action, Drama" />
+    </label>
+
+    <label>
+      Rating
+      <input type="number" step="0.1" name="rating" value="<%= old.rating || '' %>" placeholder="8.5" />
+    </label>
+
+    <label>
+      Poster URL
+      <input type="url" name="posterUrl" value="<%= old.posterUrl || '' %>" placeholder="https://..." />
+    </label>
+
+    <button type="submit" class="btn btn-primary">Add Movie</button>
+  </form>
+</section>
