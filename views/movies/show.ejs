@@ -1,0 +1,21 @@
+<section class="movie-detail">
+  <img src="<%= movie.posterUrl %>" alt="<%= movie.name %>" class="movie-image-large" />
+
+  <div class="movie-info">
+    <h1><%= movie.name %></h1>
+    <p class="muted"><%= movie.year %> • <%= movie.genres.join(', ') %></p>
+    <p><strong>Rating:</strong> <%= movie.rating %>/10</p>
+    <p><%= movie.description %></p>
+    <p><strong>Added by:</strong> <%= movie.owner?.name || 'Unknown User' %></p>
+
+    <a href="/movies" class="btn btn-secondary">Back</a>
+
+    <% if (currentUser && movie.owner && currentUser.id === movie.owner._id) { %>
+      <a href="/movies/<%= movie._id %>/edit" class="btn btn-primary">Edit</a>
+
+      <form action="/movies/<%= movie._id %>?_method=DELETE" method="POST" style="display:inline;">
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
+    <% } %>
+  </div>
+</section>
