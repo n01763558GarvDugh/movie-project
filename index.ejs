@@ -1,0 +1,37 @@
+<section class="page-header">
+  <div>
+    <h1>Movie Collection</h1>
+    <p class="muted">Browse all movies added by users.</p>
+  </div>
+  <% if (currentUser) { %>
+    <a href="/movies/new" class="btn btn-primary">+ Add Movie</a>
+  <% } %>
+</section>
+
+<% if (!movies.length) { %>
+  <section class="center-card">
+    <h3>No movies yet</h3>
+    <p>Be the first to add a movie to the collection.</p>
+    <% if (currentUser) { %>
+      <a href="/movies/new" class="btn btn-primary">Add First Movie</a>
+    <% } %>
+  </section>
+<% } else { %>
+  <section class="movie-grid">
+    <% movies.forEach((movie) => { %>
+      <article class="movie-card">
+        <img src="<%= movie.posterUrl %>" alt="<%= movie.name %> poster" class="movie-image" />
+        <div class="movie-body">
+          <div class="movie-topline">
+            <h3><%= movie.name %></h3>
+            <span class="badge"><%= movie.rating %>/10</span>
+          </div>
+          <p class="muted"><%= movie.year %> • <%= movie.genres.join(', ') %></p>
+          <p><%= movie.description.length > 120 ? movie.description.slice(0, 120) + '...' : movie.description %></p>
+          <p class="owner">Added by: <strong><%= movie.owner?.name || 'Unknown User' %></strong></p>
+          <a href="/movies/<%= movie._id %>" class="btn btn-secondary">View Details</a>
+        </div>
+      </article>
+    <% }) %>
+  </section>
+<% } %>

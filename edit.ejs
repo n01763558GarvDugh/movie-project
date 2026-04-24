@@ -1,0 +1,43 @@
+<section class="form-card">
+  <h1>Edit Movie</h1>
+  <p class="muted">Only the user who added this movie can edit it.</p>
+
+  <%- include('../partials/errors', { errors }) %>
+
+  <form action="/movies/<%= movie._id %>?_method=PUT" method="POST" class="form-grid two-col">
+    <label>
+      Movie Name
+      <input type="text" name="name" value="<%= old.name || '' %>" />
+    </label>
+
+    <label>
+      Release Year
+      <input type="number" name="year" value="<%= old.year || '' %>" />
+    </label>
+
+    <label class="full-width">
+      Description
+      <textarea name="description" rows="5"><%= old.description || '' %></textarea>
+    </label>
+
+    <label>
+      Genres
+      <input type="text" name="genres" value="<%= old.genres || '' %>" />
+    </label>
+
+    <label>
+      Rating (0 - 10)
+      <input type="number" step="0.1" min="0" max="10" name="rating" value="<%= old.rating || '' %>" />
+    </label>
+
+    <label class="full-width">
+      Poster URL
+      <input type="url" name="posterUrl" value="<%= old.posterUrl || '' %>" />
+    </label>
+
+    <div class="full-width action-row">
+      <button type="submit" class="btn btn-primary">Save Changes</button>
+      <a href="/movies/<%= movie._id %>" class="btn btn-secondary">Cancel</a>
+    </div>
+  </form>
+</section>

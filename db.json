@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "_id": "52a90e4d-eca8-4976-87d7-4590eef0fec0",
+      "name": "Garv D",
+      "email": "garvdugh@outlook.com",
+      "password": "$2a$10$TaGo5BqwxMxEXR/hxgQgAunT1BA6iAwQ9KYowYLXMNajnvhZFiiDK",
+      "createdAt": "2026-04-17T17:38:32.178Z",
+      "updatedAt": "2026-04-17T17:38:32.178Z"
+    },
+    {
+      "_id": "8c15aaec-9db2-4b65-b187-3a3ff895f3cf",
+      "name": "Garv D",
+      "email": "garvdughh@hotmail.com.com",
+      "password": "$2a$10$Kk4xpCihdy3kP9Eek165/uJpNl7ZK5mD2vg4diug9Ldp/3oipZsbS",
+      "createdAt": "2026-04-17T17:39:39.032Z",
+      "updatedAt": "2026-04-17T17:39:39.032Z"
+    }
+  ],
+  "movies": []
+}

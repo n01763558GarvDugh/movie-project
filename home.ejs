@@ -1,0 +1,28 @@
+<section class="hero">
+  <div>
+    <p class="eyebrow">Final Project Submission</p>
+    <h1>Manage movies with secure login, full CRUD, and clean route protection.</h1>
+    <p class="hero-text">
+      This web application is built with Express, EJS, session-based authentication,
+      validation, and owner-only edit/delete access.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="/movies">Browse Movies</a>
+      <% if (!currentUser) { %>
+        <a class="btn btn-secondary" href="/register">Create Account</a>
+      <% } else { %>
+        <a class="btn btn-secondary" href="/movies/new">Add a Movie</a>
+      <% } %>
+    </div>
+  </div>
+  <div class="hero-card">
+    <h3>Features Included</h3>
+    <ul>
+      <li>Registration and login validation</li>
+      <li>Movie add, view, edit, delete</li>
+      <li>Owner-only edit and delete protection</li>
+      <li>Simple local JSON data storage</li>
+      <li>Vercel deployment support</li>
+    </ul>
+  </div>
+</section>
